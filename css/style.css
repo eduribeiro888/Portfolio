@@ -1,0 +1,872 @@
+/* Arquivo CSS principal do portfólio de Eduardo Ribeiro */
+
+/* Estilos Globais e Reset Básico */
+* {
+    margin: 0; /* Remove margens padrão de todos os elementos */
+    padding: 0; /* Remove preenchimentos padrão de todos os elementos */
+    box-sizing: border-box; /* Faz com que padding e borda sejam incluídos na largura/altura total */
+}
+
+html {
+    scroll-behavior: smooth; /* Adiciona rolagem suave ao navegar entre âncoras */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Define a fonte principal do site */
+    background-color: #000000; /* Define preto como cor de fundo do site */
+    color: #E0E0E0; /* Define a cor do texto principal (cinza claro) */
+    line-height: 1.6; /* Define o espaçamento entre linhas de texto */
+    -webkit-font-smoothing: antialiased; /* Melhora a renderização de fontes no WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Melhora a renderização de fontes no Firefox */
+}
+
+/* Configuração do container principal usado em várias seções */
+.container {
+    width: 90%; /* Define largura do container como 90% da largura disponível */
+    max-width: 1100px; /* Limita a largura máxima do container */
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    padding: 0 15px; /* Adiciona espaçamento interno nas laterais */
+}
+
+/* Estilos para títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* Define a fonte para todos os títulos */
+    color: #FFFFFF; /* Define a cor branca para os títulos */
+    margin-bottom: 0.8em; /* Adiciona espaço abaixo dos títulos */
+}
+
+/* Estilo específico para títulos de nível 2 (h2) */
+h2 {
+    font-size: 2.5rem; /* Define o tamanho da fonte */
+    color: #9B59B6; /* Define a cor roxa para títulos de seção */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 1.5em; /* Adiciona espaço maior abaixo */
+    padding-top: 2em; /* Adiciona espaço acima dos títulos de seção */
+}
+
+/* Estilo para parágrafos */
+p {
+    margin-bottom: 1em; /* Adiciona espaço abaixo dos parágrafos */
+    font-size: 1.05rem; /* Define o tamanho da fonte */
+}
+
+/* Estilo para links */
+a {
+    color: #9B59B6; /* Define a cor roxa para links */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    transition: color 0.3s ease; /* Adiciona transição suave para mudança de cor */
+}
+
+/* Estilo para links quando o mouse passa por cima */
+a:hover {
+    color: #BE90D4; /* Muda para um tom de roxo mais claro */
+}
+
+/* Estilo para imagens */
+img {
+    max-width: 100%; /* Garante que as imagens não ultrapassem seu container */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Faz a imagem se comportar como bloco */
+}
+
+/* Estilos para botões */
+.botao {
+    display: inline-block; /* Permite definir largura/altura mantendo inline */
+    padding: 12px 28px; /* Adiciona espaçamento interno */
+    background-color: #9B59B6; /* Define cor de fundo roxa */
+    color: #FFFFFF; /* Define cor do texto como branco */
+    border: 2px solid #9B59B6; /* Adiciona borda roxa */
+    border-radius: 5px; /* Arredonda os cantos */
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-transform: uppercase; /* Converte texto para maiúsculas */
+    letter-spacing: 1px; /* Aumenta o espaçamento entre letras */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Adiciona transições suaves */
+    cursor: pointer; /* Muda o cursor para mãozinha ao passar por cima */
+}
+
+/* Estilo para botões quando o mouse passa por cima */
+.botao:hover {
+    background-color: #8E44AD; /* Muda para um tom de roxo mais escuro */
+    border-color: #8E44AD; /* Atualiza a cor da borda */
+    transform: translateY(-2px); /* Move o botão ligeiramente para cima */
+    color: #FFFFFF; /* Mantém a cor do texto como branco */
+}
+
+/* Estilo para botões secundários */
+.botao-secundario {
+    background-color: transparent; /* Fundo transparente */
+    color: #9B59B6; /* Cor do texto roxa */
+}
+
+/* Estilo para botões secundários quando o mouse passa por cima */
+.botao-secundario:hover {
+    background-color: #9B59B6; /* Muda o fundo para roxo */
+    color: #FFFFFF; /* Muda a cor do texto para branco */
+}
+
+/* Efeitos de Transição e Animações Suaves (Fade-in) */
+.fade-in {
+    opacity: 0; /* Começa invisível */
+    transform: translateY(20px); /* Começa 20px abaixo da posição final */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Adiciona transição suave */
+}
+
+/* Classe aplicada via JavaScript quando o elemento entra na viewport */
+.fade-in.visible {
+    opacity: 1; /* Torna o elemento visível */
+    transform: translateY(0); /* Move para a posição final */
+}
+
+/* Seção Hero Unificada (cabeçalho principal) */
+.secao-hero-unificada {
+    width: 100%; /* Ocupa toda a largura disponível */
+    min-height: 100vh; /* Altura mínima igual à altura da viewport */
+    background-color: #000000; /* Fundo preto conforme solicitado */
+    padding: 40px 0; /* Adiciona espaçamento vertical */
+    display: flex; /* Usa flexbox para centralizar conteúdo */
+    align-items: center; /* Centraliza verticalmente */
+    box-sizing: border-box; /* Inclui padding na altura total */
+}
+
+/* Container personalizado para a seção hero */
+.container-personalizado {
+    width: 90%; /* Largura de 90% do espaço disponível */
+    max-width: 1200px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0 15px; /* Adiciona espaçamento interno nas laterais */
+}
+
+/* Área do logotipo */
+.area-logo {
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin-bottom: 50px; /* Aumenta o espaço abaixo */
+}
+
+/* Imagem do logotipo */
+.arquivo-imagem-logo {
+    width: 200px; /* Aumenta a largura do logo */
+    height: auto; /* Mantém proporção */
+    transition: transform 0.3s ease; /* Adiciona transição suave */
+}
+
+/* Efeito hover no logo */
+.arquivo-imagem-logo:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+}
+
+/* Layout da área de conteúdo principal */
+.area-conteudo {
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 60px; /* Aumenta o espaço entre os elementos */
+}
+
+/* Área de texto na seção hero */
+.conteudo-texto {
+    flex: 2; /* Ocupa mais espaço que a imagem */
+}
+
+/* Área da imagem na seção hero */
+.conteudo-imagem {
+    flex: 1; /* Ocupa menos espaço que o texto */
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+/* Estilo para o título principal (h1) */
+.titulo-principal {
+    font-family: 'Montserrat', sans-serif; /* Define a fonte */
+    font-size: 3.5rem; /* Aumenta o tamanho */
+    color: #FFFFFF; /* Define a cor branca */
+    margin-bottom: 0.3em; /* Reduz o espaço abaixo para aproximar do subtítulo */
+    letter-spacing: 1px; /* Adiciona espaçamento entre letras */
+}
+
+/* Estilo para o subtítulo principal (h2 no cabeçalho) */
+.subtitulo-principal {
+    font-size: 1.8rem; /* Define o tamanho */
+    color: #9B59B6; /* Define a cor roxa */
+    margin-bottom: 1.5em; /* Aumenta o espaço abaixo para separar dos botões */
+    font-weight: 400; /* Reduz o peso da fonte para contrastar com o título */
+}
+
+/* Estilo para texto destacado */
+.destaque {
+    font-size: 1.2rem; /* Define o tamanho */
+    color: #E0E0E0; /* Define a cor (cinza claro) */
+    margin-bottom: 25px; /* Adiciona espaço abaixo */
+    font-style: italic; /* Aplica estilo itálico */
+}
+
+/* Estilo para texto biográfico */
+.bio {
+    font-size: 1.05rem; /* Define o tamanho */
+    line-height: 1.6; /* Define o espaçamento entre linhas */
+    color: #D0D0D0; /* Define a cor (cinza claro) */
+    margin-bottom: 30px; /* Adiciona espaço abaixo */
+}
+
+/* Área dos botões na seção hero */
+.botoes-hero {
+    margin-bottom: 35px; /* Aumenta o espaço abaixo */
+    display: flex; /* Usa flexbox */
+    gap: 15px; /* Adiciona espaço entre os botões */
+}
+
+/* Ícones de redes sociais personalizados */
+.icones-sociais-personalizados {
+    display: flex; /* Usa flexbox */
+    gap: 15px; /* Espaço entre os ícones */
+}
+
+/* Links dos ícones sociais */
+.icones-sociais-personalizados a {
+    color: #0A0F1E; /* Cor do ícone (azul escuro/preto) */
+    background-color: #D0D0D0; /* Cor de fundo (cinza claro) */
+    width: 35px; /* Largura do botão */
+    height: 35px; /* Altura do botão */
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 1rem; /* Tamanho do ícone */
+    border-radius: 3px; /* Arredonda os cantos */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Transições suaves */
+}
+
+/* Efeito hover nos ícones sociais */
+.icones-sociais-personalizados a:hover {
+    background-color: #9B59B6; /* Muda para roxo */
+    color: #FFFFFF; /* Muda para branco */
+    transform: translateY(-2px); /* Move ligeiramente para cima */
+}
+
+/* Imagem de perfil */
+.arquivo-imagem-perfil {
+    width: 350px; /* Aumenta a largura */
+    height: 350px; /* Aumenta a altura */
+    border-radius: 50%; /* Torna a imagem circular */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorção */
+    border: 4px solid #9B59B6; /* Adiciona borda roxa mais grossa */
+    box-shadow: 0 8px 25px rgba(155, 89, 182, 0.3); /* Adiciona sombra roxa */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adiciona transições suaves */
+}
+
+/* Efeito hover na imagem de perfil */
+.arquivo-imagem-perfil:hover {
+    transform: scale(1.02); /* Aumenta ligeiramente o tamanho */
+    box-shadow: 0 12px 30px rgba(155, 89, 182, 0.4); /* Intensifica a sombra */
+}
+
+/* Seção Sobre Mim */
+section#sobre-mim {
+    padding: 60px 0; /* Adiciona espaçamento vertical */
+    background-color: #0A0A0A; /* Cor de fundo (preto ligeiramente mais claro) */
+}
+
+/* Conteúdo da seção Sobre Mim */
+.sobre-mim-conteudo {
+    max-width: 800px; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* Texto na seção Sobre Mim */
+.sobre-mim-texto {
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+/* Subtítulos na seção Sobre Mim */
+.sobre-mim-texto h3 {
+    color: #9B59B6; /* Cor roxa para subtítulos */
+    font-size: 1.5rem; /* Tamanho da fonte */
+    margin-top: 25px; /* Espaço acima */
+    margin-bottom: 15px; /* Espaço abaixo */
+}
+
+/* Parágrafos na seção Sobre Mim */
+.sobre-mim-texto p {
+    font-size: 1.1rem; /* Define o tamanho */
+    color: #D0D0D0; /* Define a cor (cinza claro) */
+    margin-bottom: 20px; /* Espaço abaixo */
+    line-height: 1.7; /* Espaçamento entre linhas */
+}
+
+/* Lista de skills */
+.lista-skills {
+    list-style: none; /* Remove marcadores padrão */
+    padding-left: 0; /* Remove padding padrão */
+    margin-bottom: 30px; /* Espaço abaixo da lista */
+}
+
+/* Itens da lista de skills */
+.lista-skills li {
+    margin-bottom: 12px; /* Espaço entre itens */
+    color: #D0D0D0; /* Cor do texto */
+    font-size: 1.05rem; /* Tamanho da fonte */
+    display: flex; /* Usa flexbox */
+    align-items: baseline; /* Alinha itens pela linha de base */
+}
+
+/* Antes de cada item da lista */
+.lista-skills li::before {
+    content: "•"; /* Adiciona um bullet point */
+    color: #9B59B6; /* Cor roxa */
+    font-size: 1.2rem; /* Tamanho maior que o texto */
+    margin-right: 10px; /* Espaço à direita */
+}
+
+/* Destaque nos itens da lista */
+.lista-skills li span {
+    font-weight: bold; /* Texto em negrito */
+    color: #FFFFFF; /* Cor branca */
+    margin-right: 5px; /* Espaço à direita */
+}
+
+/* Seção de Certificados */
+section#certificados {
+    padding: 60px 0; /* Adiciona espaçamento vertical */
+    background-color: #000000; /* Cor de fundo preta */
+}
+
+/* Grade de certificados */
+.grade-certificados {
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Empilha os certificados verticalmente */
+    gap: 25px; /* Espaço entre os certificados */
+    max-width: 800px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* Cartão de certificado individual */
+.cartao-certificado {
+    background-color: #111111; /* Cor de fundo (preto ligeiramente mais claro) */
+    border-radius: 8px; /* Arredonda os cantos */
+    padding: 25px; /* Adiciona espaçamento interno */
+    display: flex; /* Usa flexbox */
+    gap: 20px; /* Espaço entre o ícone e o conteúdo */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+    border-left: 4px solid #9B59B6; /* Borda esquerda roxa */
+}
+
+/* Efeito hover nos cartões de certificado */
+.cartao-certificado:hover {
+    transform: translateY(-5px); /* Move o cartão para cima */
+    box-shadow: 0 10px 25px rgba(155, 89, 182, 0.2); /* Adiciona sombra roxa */
+}
+
+/* Ícone do certificado */
+.certificado-icone {
+    font-size: 2.5rem; /* Tamanho do ícone */
+    color: #9B59B6; /* Cor roxa */
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    min-width: 60px; /* Largura mínima */
+}
+
+/* Conteúdo do certificado */
+.certificado-conteudo {
+    flex: 1; /* Ocupa o espaço disponível */
+}
+
+/* Título do certificado */
+.certificado-conteudo h3 {
+    font-size: 1.4rem; /* Tamanho da fonte */
+    color: #FFFFFF; /* Cor branca */
+    margin-bottom: 8px; /* Espaço abaixo */
+}
+
+/* Instituição do certificado */
+.certificado-instituicao {
+    font-size: 1.1rem; /* Tamanho da fonte */
+    color: #9B59B6; /* Cor roxa */
+    font-weight: bold; /* Texto em negrito */
+    margin-bottom: 5px; /* Espaço abaixo */
+}
+
+/* Data do certificado */
+.certificado-data {
+    font-size: 0.9rem; /* Tamanho da fonte */
+    color: #888888; /* Cor cinza */
+    margin-bottom: 10px; /* Espaço abaixo */
+    font-style: italic; /* Texto em itálico */
+}
+
+/* Descrição do certificado */
+.certificado-descricao {
+    font-size: 1rem; /* Tamanho da fonte */
+    color: #D0D0D0; /* Cor cinza claro */
+    line-height: 1.5; /* Espaçamento entre linhas */
+}
+
+/* Seção de Tecnologias e Ferramentas */
+section#tecnologias {
+    padding: 60px 0; /* Adiciona espaçamento vertical */
+    background-color: #0A0A0A; /* Cor de fundo (preto ligeiramente mais claro) */
+}
+
+/* Container para as categorias de tecnologias */
+.tecnologias-container {
+    max-width: 900px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* Título da categoria */
+.categoria-titulo {
+    color: #9B59B6; /* Cor roxa */
+    font-size: 1.8rem; /* Tamanho da fonte */
+    margin-bottom: 25px; /* Espaço abaixo */
+    text-align: center; /* Centraliza o texto */
+    position: relative; /* Para posicionamento dos elementos decorativos */
+    padding-bottom: 10px; /* Espaço abaixo do texto */
+}
+
+/* Linha decorativa abaixo do título da categoria */
+.categoria-titulo::after {
+    content: ""; /* Conteúdo vazio */
+    position: absolute; /* Posicionamento absoluto */
+    bottom: 0; /* Alinha na parte inferior */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta para centralização perfeita */
+    width: 80px; /* Largura da linha */
+    height: 3px; /* Altura da linha */
+    background-color: #9B59B6; /* Cor roxa */
+    border-radius: 2px; /* Arredonda os cantos */
+}
+
+/* Grade de tecnologias */
+.grade-tecnologias {
+    display: grid; /* Usa layout de grade */
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Colunas responsivas */
+    gap: 25px; /* Espaço entre os itens */
+    margin-bottom: 50px; /* Espaço abaixo da grade */
+}
+
+/* Item individual de tecnologia */
+.item-tecnologia {
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+/* Efeito hover no item de tecnologia */
+.item-tecnologia:hover {
+    transform: translateY(-5px); /* Move o item para cima */
+}
+
+/* Ícone da tecnologia */
+.tecnologia-icone {
+    font-size: 2.5rem; /* Tamanho do ícone */
+    color: #9B59B6; /* Cor roxa */
+    margin-bottom: 10px; /* Espaço abaixo */
+    background-color: rgba(155, 89, 182, 0.1); /* Fundo roxo transparente */
+    width: 70px; /* Largura do círculo */
+    height: 70px; /* Altura do círculo */
+    border-radius: 50%; /* Forma circular */
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves */
+}
+
+/* Efeito hover no ícone da tecnologia */
+.item-tecnologia:hover .tecnologia-icone {
+    background-color: rgba(155, 89, 182, 0.2); /* Intensifica o fundo roxo */
+    color: #BE90D4; /* Clareia a cor do ícone */
+}
+
+/* Nome da tecnologia */
+.tecnologia-nome {
+    font-size: 1rem; /* Tamanho da fonte */
+    color: #FFFFFF; /* Cor branca */
+    font-weight: bold; /* Texto em negrito */
+}
+
+/* Seção Contato */
+section#contato {
+    padding: 60px 0; /* Adiciona espaçamento vertical */
+    background-color: #0A0A0A; /* Cor de fundo (preto ligeiramente mais claro) */
+}
+
+/* Container para o conteúdo de contato */
+.contato-container {
+    display: flex; /* Usa flexbox */
+    flex-wrap: wrap; /* Permite quebra em telas menores */
+    gap: 40px; /* Espaço entre o formulário e as informações */
+    max-width: 1000px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* Formulário de contato */
+.formulario-contato {
+    flex: 1; /* Ocupa espaço disponível */
+    min-width: 300px; /* Largura mínima */
+    background-color: #111111; /* Cor de fundo (preto ligeiramente mais claro) */
+    padding: 30px; /* Adiciona espaçamento interno */
+    border-radius: 8px; /* Arredonda os cantos */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+}
+
+/* Título do formulário */
+.formulario-contato h3 {
+    color: #9B59B6; /* Cor roxa */
+    font-size: 1.6rem; /* Tamanho da fonte */
+    margin-bottom: 20px; /* Espaço abaixo */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Campo do formulário */
+.campo-formulario {
+    margin-bottom: 20px; /* Espaço abaixo */
+}
+
+/* Label do campo */
+.campo-formulario label {
+    display: block; /* Exibe como bloco */
+    margin-bottom: 8px; /* Espaço abaixo */
+    color: #FFFFFF; /* Cor branca */
+    font-weight: bold; /* Texto em negrito */
+}
+
+/* Input de texto e email */
+.campo-formulario input[type="text"],
+.campo-formulario input[type="email"],
+.campo-formulario textarea {
+    width: 100%; /* Ocupa toda a largura disponível */
+    padding: 12px; /* Adiciona espaçamento interno */
+    border: 1px solid #333333; /* Borda cinza escuro */
+    border-radius: 4px; /* Arredonda os cantos */
+    background-color: #1A1A1A; /* Cor de fundo (preto ligeiramente mais claro) */
+    color: #E0E0E0; /* Cor do texto (cinza claro) */
+    font-family: 'Roboto', sans-serif; /* Define a fonte */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+}
+
+/* Efeito focus nos inputs */
+.campo-formulario input[type="text"]:focus,
+.campo-formulario input[type="email"]:focus,
+.campo-formulario textarea:focus {
+    border-color: #9B59B6; /* Borda roxa */
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 0 2px rgba(155, 89, 182, 0.2); /* Adiciona sombra roxa */
+}
+
+/* Placeholder nos inputs */
+.campo-formulario input::placeholder,
+.campo-formulario textarea::placeholder {
+    color: #666666; /* Cor cinza médio */
+}
+
+/* Botão de enviar */
+.botao-enviar {
+    width: 100%; /* Ocupa toda a largura disponível */
+    padding: 14px; /* Adiciona espaçamento interno */
+    margin-top: 10px; /* Espaço acima */
+}
+
+/* Informações de contato */
+.info-contato {
+    flex: 1; /* Ocupa espaço disponível */
+    min-width: 300px; /* Largura mínima */
+}
+
+/* Título das informações de contato */
+.info-contato h3 {
+    color: #9B59B6; /* Cor roxa */
+    font-size: 1.6rem; /* Tamanho da fonte */
+    margin-bottom: 20px; /* Espaço abaixo */
+}
+
+/* Email de contato */
+.email-contato {
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    margin-bottom: 30px; /* Espaço abaixo */
+    font-size: 1.1rem; /* Tamanho da fonte */
+}
+
+/* Ícone do email */
+.email-contato i {
+    color: #9B59B6; /* Cor roxa */
+    font-size: 1.3rem; /* Tamanho do ícone */
+    margin-right: 10px; /* Espaço à direita */
+}
+
+/* Título das redes sociais */
+.info-contato h4 {
+    color: #FFFFFF; /* Cor branca */
+    font-size: 1.3rem; /* Tamanho da fonte */
+    margin-bottom: 15px; /* Espaço abaixo */
+    margin-top: 30px; /* Espaço acima */
+}
+
+/* Grade de redes sociais */
+.redes-sociais-grid {
+    display: grid; /* Usa layout de grade */
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Colunas responsivas */
+    gap: 15px; /* Espaço entre os itens */
+}
+
+/* Item individual de rede social */
+.rede-social-item {
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    padding: 15px; /* Adiciona espaçamento interno */
+    border-radius: 8px; /* Arredonda os cantos */
+    background-color: #111111; /* Cor de fundo (preto ligeiramente mais claro) */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transições suaves */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+/* Efeito hover no item de rede social */
+.rede-social-item:hover {
+    transform: translateY(-5px); /* Move o item para cima */
+    background-color: #1A1A1A; /* Clareia o fundo */
+}
+
+/* Ícone da rede social */
+.rede-social-icone {
+    font-size: 1.8rem; /* Tamanho do ícone */
+    color: #9B59B6; /* Cor roxa */
+    margin-bottom: 10px; /* Espaço abaixo */
+}
+
+/* Nome da rede social */
+.rede-social-item span {
+    color: #FFFFFF; /* Cor branca */
+    font-weight: bold; /* Texto em negrito */
+}
+
+/* Rodapé */
+footer {
+    background-color: #050505; /* Cor de fundo (preto mais escuro) */
+    color: #AAAAAA; /* Cor do texto (cinza) */
+    padding: 40px 0; /* Adiciona espaçamento vertical */
+    text-align: center; /* Centraliza o texto */
+    border-top: 1px solid #1A1A1A; /* Adiciona borda superior */
+}
+
+/* Parágrafos no rodapé */
+footer p {
+    margin-bottom: 15px; /* Adiciona espaço abaixo */
+    font-size: 0.9rem; /* Define o tamanho */
+}
+.cartao-projeto {
+    background-color: #111111; /* Cor de fundo (preto ligeiramente mais claro) */
+    border-radius: 8px; /* Arredonda os cantos */
+    padding: 25px; /* Adiciona espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    justify-content: space-between; /* Distribui o espaço verticalmente */
+}
+
+/* Efeito hover nos cartões de projeto */
+.cartao-projeto:hover {
+    transform: translateY(-8px); /* Move o cartão para cima */
+    box-shadow: 0 10px 25px rgba(155, 89, 182, 0.2); /* Adiciona sombra roxa */
+}
+
+/* Imagens nos cartões de projeto */
+.cartao-projeto img {
+    width: 100%; /* Ocupa toda a largura disponível */
+    height: 220px; /* Altura fixa */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorção */
+    border-radius: 5px; /* Arredonda os cantos */
+    margin-bottom: 20px; /* Adiciona espaço abaixo */
+}
+
+/* Títulos nos cartões de projeto */
+.cartao-projeto h3 {
+    font-size: 1.6rem; /* Define o tamanho */
+    color: #9B59B6; /* Define a cor (roxo) */
+    margin-bottom: 10px; /* Adiciona espaço abaixo */
+}
+
+/* Parágrafos nos cartões de projeto */
+.cartao-projeto p {
+    font-size: 0.95rem; /* Define o tamanho */
+    color: #B0B0B0; /* Define a cor (cinza) */
+    margin-bottom: 20px; /* Adiciona espaço abaixo */
+    flex-grow: 1; /* Faz a descrição ocupar o espaço disponível */
+}
+
+/* Botões nos cartões de projeto */
+.cartao-projeto .botoes-projeto a {
+    margin: 5px; /* Adiciona margem */
+}
+
+/* Seção Contato */
+section#contato {
+    padding: 60px 0; /* Adiciona espaçamento vertical */
+    background-color: #0A0A0A; /* Cor de fundo (preto ligeiramente mais claro) */
+}
+
+/* Links de redes sociais na seção de contato */
+section#contato .links-sociais {
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Parágrafos nos links sociais */
+section#contato .links-sociais p {
+    margin-bottom: 15px; /* Adiciona espaço abaixo */
+    font-size: 1.1rem; /* Define o tamanho */
+}
+
+/* Links individuais nas redes sociais */
+section#contato .links-sociais a {
+    margin: 0 15px; /* Adiciona espaço horizontal */
+    font-size: 1.2rem; /* Define o tamanho */
+    font-weight: bold; /* Deixa em negrito */
+}
+
+/* Rodapé */
+footer {
+    background-color: #050505; /* Cor de fundo (preto mais escuro) */
+    color: #AAAAAA; /* Cor do texto (cinza) */
+    padding: 40px 0; /* Adiciona espaçamento vertical */
+    text-align: center; /* Centraliza o texto */
+    border-top: 1px solid #1A1A1A; /* Adiciona borda superior */
+}
+
+/* Parágrafos no rodapé */
+footer p {
+    margin-bottom: 15px; /* Adiciona espaço abaixo */
+    font-size: 0.9rem; /* Define o tamanho */
+}
+
+/* Media Queries para Responsividade */
+
+/* Telas médias (tablets e celulares grandes) */
+@media (max-width: 768px) {
+    /* Ajusta o tamanho do título principal */
+    .titulo-principal {
+        font-size: 2.8rem;
+    }
+
+    /* Ajusta o tamanho do subtítulo no cabeçalho */
+    .subtitulo-principal {
+        font-size: 1.6rem;
+    }
+
+    /* Ajusta o tamanho do texto destacado no cabeçalho */
+    header#inicio .destaque {
+        font-size: 1.1rem;
+    }
+
+    /* Ajusta o tamanho dos títulos de seção */
+    h2 {
+        font-size: 2rem;
+    }
+
+    /* Muda a grade de projetos para uma coluna */
+    .grade-projetos {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajusta o tamanho dos botões */
+    .botao {
+        padding: 10px 22px;
+        font-size: 0.9rem;
+    }
+    
+    /* Reorganiza o conteúdo na seção hero */
+    .area-conteudo {
+        flex-direction: column-reverse; /* Inverte a ordem (imagem acima, texto abaixo) */
+        text-align: center; /* Centraliza o texto */
+        gap: 30px; /* Reduz o espaço entre os elementos */
+    }
+    
+    /* Ajusta a área de texto */
+    .conteudo-texto {
+        width: 100%; /* Ocupa toda a largura disponível */
+    }
+    
+    /* Ajusta a área da imagem */
+    .conteudo-imagem {
+        width: 100%; /* Ocupa toda a largura disponível */
+        margin-bottom: 20px; /* Adiciona espaço abaixo */
+    }
+    
+    /* Centraliza os ícones sociais */
+    .icones-sociais-personalizados {
+        justify-content: center;
+    }
+    
+    /* Ajusta os botões na seção hero */
+    .botoes-hero {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    /* Ajusta a margem dos botões */
+    .botao {
+        margin: 5px;
+    }
+    
+    /* Centraliza a área do logo */
+    .area-logo {
+        justify-content: center;
+    }
+    
+    /* Ajusta o tamanho da imagem de perfil */
+    .arquivo-imagem-perfil {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 480px) {
+    /* Ajusta o tamanho do título principal */
+    .titulo-principal {
+        font-size: 2.2rem;
+    }
+    
+    /* Ajusta o tamanho do subtítulo */
+    .subtitulo-principal {
+        font-size: 1.4rem;
+    }
+    
+    /* Ajusta o tamanho do texto destacado */
+    header#inicio .destaque {
+        font-size: 1rem;
+    }
+    
+    /* Reorganiza os botões na vertical */
+    .botoes-hero {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    /* Ajusta a largura dos botões */
+    .botoes-hero a {
+        width: 80%;
+        max-width: 280px;
+    }
+    
+    /* Reduz o tamanho da imagem de perfil */
+    .arquivo-imagem-perfil {
+        width: 200px;
+        height: 200px;
+    }
+    
+    /* Reduz o tamanho do logo */
+    .arquivo-imagem-logo {
+        width: 150px;
+    }
+}
